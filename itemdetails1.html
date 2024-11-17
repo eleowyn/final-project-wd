@@ -13,14 +13,14 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-image: url('images/backgroundimage.jpg');
+            background-size: cover;
         }
 
         .header {
-            background-color: #1e40af;
+            background-color: rgb(189, 255, 245);
             padding: 1rem 2rem;
-            color: white;
+            color: rgb(5, 67, 90);
             position: relative;
         }
 
@@ -31,7 +31,7 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: white;
+            color: rgb(0, 0, 0);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -91,11 +91,16 @@
         }
 
         .item-status {
-            background-color: #c8ffd7;
-            color: #16a34a;
+            background-color: #fee2e2;
+            color: #dc2626;
             padding: 0.5rem 1rem;
             border-radius: 999px;
             font-weight: 500;
+        }
+
+        .item-status.found {
+            background-color: #dcfce7;
+            color: #16a34a;
         }
 
         .item-metadata {
@@ -138,12 +143,12 @@
         }
 
         .primary-button {
-            background-color: #1e40af;
+            background-color: #074b6a;
             color: white;
         }
 
         .primary-button:hover {
-            background-color: #1e3a8a;
+            background-color: #0272bd;
         }
 
         .secondary-button {
