@@ -1,4 +1,3 @@
-/* Enhanced Profile Page CSS */
 :root {
     --primary-color: #2196F3;
     --secondary-color: #00BCD4;
@@ -30,7 +29,6 @@ body {
     overflow: hidden;
 }
 
-/* Left Sidebar - Profile Details */
 .profile-sidebar {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
@@ -86,7 +84,6 @@ body {
     color: rgba(255,255,255,0.7);
 }
 
-/* Right Content - Detailed Profile */
 .profile-content {
     padding: 40px;
     background-color: #f9f9f9;
@@ -132,7 +129,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Action Buttons */
 .profile-actions {
     margin-top: 30px;
     display: flex;
@@ -164,7 +160,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     #profile-container {
         grid-template-columns: 1fr;

@@ -37,9 +37,9 @@ body {
 }
 
 .header-content img {
-    width: 60px; /* Ubah ukuran sesuai kebutuhan */
-    height: auto; /* Agar rasio aspek tetap seimbang */
-    margin-right: 15px; /* Memberi ruang antara logo dan teks */
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
 }
 
 
