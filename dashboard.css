@@ -58,7 +58,7 @@ body {
 }
 
 .header:hover {
-    background: linear-gradient(135deg, rgb(67, 242, 236), rgb(94, 171, 238));
+    background: linear-gradient(135deg, rgb(168, 255, 252), rgb(162, 200, 234));
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -215,7 +215,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     background: none;
-    color: #4a5568;
+    color: #005265;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -224,7 +224,7 @@ body {
 }
 
 .toggle-btn.active {
-    background-color: #3b82f6;
+    background-color: #024f6b;
     color: white;
 }
 
@@ -312,7 +312,7 @@ body {
 .contact-btn {
     width: 100%;
     padding: 1rem;
-    background-color: #3b82f6;
+    background-color: #085f87;
     color: white;
     border: none;
     border-radius: 0.25rem;
@@ -322,7 +322,7 @@ body {
 }
 
 .contact-btn:hover {
-    background-color: #2563eb;
+    background-color: #0e8983;
     transform: translateY(-3px);
 }
 

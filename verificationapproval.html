@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found - Finder's Verification Panel</title>
+    <link rel="stylesheet" href="verificationapproval.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Verification Approval </h2>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="verification-section">
+            <h2><i class="fas fa-check-circle"></i> Pending Verification Requests</h2>
+            
+            <div class="verification-requests">
+                <div class="request-card">
+                    <div class="request-header">
+                        <span class="request-id">#REQ001</span>
+                        <span class="status pending">Awaiting Review</span>
+                    </div>
+                    
+                    <div class="request-details">
+                        <div class="user-info">
+                            <h3>Claimant Details</h3>
+                            <p><strong>Student ID:</strong> <span id="studentId">12345678</span></p>
+                            <p><strong>Submission Date:</strong> <span id="submissionDate">2024-03-17</span></p>
+                        </div>
+
+                        <div class="claim-evidence">
+                            <h3>Claim Evidence</h3>
+                            <div class="evidence-images">
+                                <div class="image-container">
+                                    <img src="images/verification.jpg" alt="ID Card" class="evidence-image">
+                                    <p>Student ID Card</p>
+                                </div>
+                                <div class="image-container">
+                                    <img src="images/verification.jpg" alt="Selfie" class="evidence-image">
+                                    <p>Verification Selfie</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-description">
+                            <h3>Item Description Provided</h3>
+                            <p class="description-text">
+                                White Airpods with blue case cover. Serial number: XXXXXX. 
+                                Has a small scratch on the right pod.
+                            </p>
+                        </div>
+
+                        <div class="verification-form">
+                            <h3>Verification Decision</h3>
+                            <form id="approvalForm">
+                                <div class="form-group">
+                                    <label for="verificationNotes">Notes (Optional)</label>
+                                    <textarea id="verificationNotes" placeholder="Add any notes about your decision..."></textarea>
+                                </div>
+
+                                <div class="meeting-scheduler">
+                                    <label for="meetingDate">Schedule Return Meeting</label>
+                                    <input type="datetime-local" id="meetingDate" required>
+                                    <input type="text" id="meetingLocation" placeholder="Meeting Location" required>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="submit" class="approve-btn">
+                                        <i class="fas fa-check"></i> Approve Claim
+                                    </button>
+                                    <button type="button" class="reject-btn">
+                                        <i class="fas fa-times"></i> Reject Claim
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="verification-section">
+            <h2><i class="fas fa-history"></i> Verification History</h2>
+            <div class="history-list">
+                <div class="history-item approved">
+                    <div class="history-header">
+                        <span class="request-id">#REQ002</span>
+                        <span class="status">Approved</span>
+                    </div>
+                    <div class="history-details">
+                        <p><strong>Student ID:</strong> 12345679</p>
+                        <p><strong>Date:</strong> 2024-03-15</p>
+                        <p><strong>Item:</strong> Calculator</p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+
+                <div class="history-item rejected">
+                    <div class="history-header">
+                        <span class="request-id">#REQ003</span>
+                        <span class="status">Rejected</span>
+                    </div>
+                    <div class="history-details">
+                        <p><strong>Student ID:</strong> 12345680</p>
+                        <p><strong>Date:</strong> 2024-03-14</p>
+                        <p><strong>Item:</strong> Notebook</p>
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="finder-verification.js"></script>
+</body>
+</html>
