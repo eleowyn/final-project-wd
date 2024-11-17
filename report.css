@@ -102,16 +102,16 @@ input[type="text"],
 input[type="datetime-local"],
 textarea {
     width: 100%;
-    padding: 1rem; /* Increased padding */
+    padding: 1rem;
     border: 1px solid #d1d5db;
     border-radius: 0.5rem;
     background-color: #ffffff;
     transition: border-color 0.3s ease;
-    font-size: 1rem; /* Slightly larger font size */
+    font-size: 1rem;
 }
 
 textarea {
-    height: 150px; /* Increased height for the textarea */
+    height: 150px;
     resize: vertical;
 }
 
