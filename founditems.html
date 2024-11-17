@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelaporan Barang - UNKLAB</title>
+    <link rel="stylesheet" href="report.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-shape"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-clipboard-list"></i> Pelaporan Barang Temuan</h1>
+            <p class="subtitle">Sistem Pelaporan Barang Temuan UNKLAB</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn" data-tab="lost" onclick="gotoReportItem()">
+                <i class="fas fa-search"></i> Barang Hilang
+            </button>
+            <button class="tab-btn active" data-tab="found">
+                <i class="fas fa-hand-holding"></i> Barang Temuan
+            </button>
+        </div>
+
+        <script>
+            function gotoReportItem() {
+                window.location.href = 'reportitem.html';
+            }
+        </script>
+
+        <div class="form-container">
+            <!-- Lost Items Form -->
+            <form id="reportForm" class="active-form">
+                <div class="form-group">
+                    <label for="itemType">
+                        <i class="fas fa-box"></i> Jenis Barang
+                    </label>
+                    <input type="text" id="itemType" name="itemType" required 
+                           placeholder="Contoh: Laptop, Dompet, etc">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        <i class="fas fa-align-left"></i> Deskripsi Barang
+                    </label>
+                    <textarea id="description" name="description" required 
+                            placeholder="Berikan deskripsi detail tentang barang (warna, merek, ciri khusus, dll)"></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="location">
+                            <i class="fas fa-map-marker-alt"></i> Lokasi Penemuan
+                        </label>
+                        <input type="text" id="location" name="location" required 
+                               placeholder="Contoh: Perpustakaan Lantai 2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateLost">
+                            <i class="fas fa-calendar-alt"></i> Waktu Penemuan
+                        </label>
+                        <input type="datetime-local" id="dateLost" name="dateLost" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="photoUpload">
+                        <i class="fas fa-camera"></i> Upload Foto Barang
+                    </label>
+                    <div class="file-upload">
+                        <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+                        <label for="photoUpload" class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Pilih File</span>
+                        </label>
+                        <div class="file-preview"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Kirim Laporan
+                </button>
+            </form>
+
+        <div class="notification">
+            <i class="fas fa-bell"></i>
+            <div class="notification-content">
+                <h3>Notifikasi</h3>
+                <p>Laporan akan diteruskan ke petugas terkait untuk ditindaklanjuti.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

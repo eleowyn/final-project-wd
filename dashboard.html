@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>UNKLAB Lost & Found</h1>
+            <div class="user-menu">
+                <div class="help-support">
+                    <i class="fas fa-question-circle" title="Help & Support" onclick="helpandcontact()"></i>
+                </div>
+                <div class="notification-icon" onclick="window.location.href='notification.html'">🔔</div>
+                <div class="user-icon" onclick="window.location.href='profile.html'">👤</div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function helpandcontact() {
+            window.location.href = 'panduan.html';
+        }
+    </script>
+
+    <nav class="tabs">
+        <div class="tab active">
+            Browse <span class="notification">5</span>
+        </div>
+        <div class="tab" onclick="window.location.href='reportitem.html'">Report Lost</div>
+        <div class="tab" onclick="window.location.href='founditems.html'">Report Found</div>
+        <div class="tab" onclick="window.location.href='forum.html'">Forum</div>
+    </nav>
+
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search items...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn">Category</button>
+                <button class="filter-btn">Date Range</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="status-toggle">
+        <div class="toggle-container">
+            <button class="toggle-btn active" onclick="filterItems('lost')">Lost</button>
+            <button class="toggle-btn" onclick="filterItems('found')">Found</button>
+        </div>
+    </section>
+
+    <main class="items-grid">
+        <!-- 1st Item: AirPods (Lost) -->
+        <div class="item-card lost">
+            <div class="item-image">
+                <img src="images/airpods-wb.jpg" alt="AirPods" onclick="gotoDetails()">
+                <button class="bookmark-btn">🔖</button>
+            </div>
+            <div class="item-content">
+                <h3>AirPods</h3>
+                <p class="location">📍 Lost at GK1-303</p>
+                <p class="time">⏰ 2 hours ago</p>
+                <button class="contact-btn" onclick="gotoDetails()">Details</button>
+            </div>
+        </div>
+
+        <!-- 2nd Item: Student ID Card (Lost) -->
+        <div class="item-card lost">
+            <div class="item-image">
+                <img src="images/id-card.jpg" alt="Student ID Card" onclick="gotoDetails()">
+                <button class="bookmark-btn">🔖</button>
+            </div>
+            <div class="item-content">
+                <h3>Student ID Card</h3>
+                <p class="location">📍 Lost at GK2-118</p>
+                <p class="time">⏰ 5 hours ago</p>
+                <button class="contact-btn" onclick="gotoDetails2()">Details</button>
+            </div>
+        </div>
+
+        <!-- 3rd Item: Bottle (Lost) -->
+        <div class="item-card lost">
+            <div class="item-image">
+                <img src="images/bottle.jpg" alt="Bottle" onclick="gotoDetails()">
+                <button class="bookmark-btn">🔖</button>
+            </div>
+            <div class="item-content">
+                <h3>Water Bottle</h3>
+                <p class="location">📍 Lost at GK1-503</p>
+                <p class="time">⏰ 1 day ago</p>
+                <button class="contact-btn" onclick="gotoDetails3()">Details</button>
+            </div>
+        </div>
+
+        <!-- 4th Item: Glasses (Found) -->
+        <div class="item-card found">
+            <div class="item-image">
+                <img src="images/glasses.jpg" alt="Glasses" onclick="gotoDetails()">
+                <button class="bookmark-btn">🔖</button>
+            </div>
+            <div class="item-content">
+                <h3>Glasses</h3>
+                <p class="location">📍 Found at GK3-203</p>
+                <p class="time">⏰ 1 day ago</p>
+                <button class="contact-btn" onclick="gotoDetails1()">Details</button>
+            </div>
+        </div>
+
+        <div class="item-card found">
+            <div class="item-image">
+                <img src="images/minifan.jpg" alt="Mini Fan" onclick="gotoDetails()">
+                <button class="bookmark-btn">🔖</button>
+            </div>
+            <div class="item-content">
+                <h3>Mini Fan</h3>
+                <p class="location">📍 Found at Canteen UNKLAB</p>
+                <p class="time">⏰ 1 day ago</p>
+                <button class="contact-btn" onclick="gotoDetails4()">Details</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function filterItems(status) {
+            const items = document.querySelectorAll('.item-card');
+
+            items.forEach(item => {
+                if (item.classList.contains(status)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            if (status === 'lost') {
+                document.querySelector('.toggle-btn:nth-child(1)').classList.add('active');
+            } else {
+                document.querySelector('.toggle-btn:nth-child(2)').classList.add('active');
+            }
+        }
+
+        function gotoDetails() {
+            window.location.href = 'itemdetails.html';
+        }
+
+        function gotoDetails1() {
+            window.location.href = 'itemdetails1.html';
+        }
+
+        function gotoDetails2() {
+            window.location.href = 'itemdetails2.html';
+        }
+
+        function gotoDetails3() {
+            window.location.href = 'itemdetails3.html';
+        }
+
+        function gotoDetails4() {
+            window.location.href = 'itemdetails4.html';
+        }
+
+        window.onload = function() {
+            filterItems('lost');
+        };
+    </script>
+
+</body>
+</html>

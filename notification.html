@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi</title>
+    <link rel="stylesheet" href="notification.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="notification-header">
+        <h1><i class="fas fa-bell"></i> Pusat Notifikasi</h1>
+        <p>Pantau semua pemberitahuan tentang barang hilang dan ditemukan</p>
+    </div>
+    
+    <div class="container">
+        <div class="notification-panel">
+            <h2><i class="fas fa-bell"></i> Notifikasi Terbaru</h2>
+            
+            <div class="notification-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="unread">Belum Dibaca</button>
+                <button class="filter-btn" data-filter="read">Sudah Dibaca</button>
+            </div>
+
+            <div class="notification-list">
+                <!-- Unread Notifications -->
+                <div class="notification-item unread">
+                    <div class="notification-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Barang Ditemukan</h3>
+                        <p>Seseorang telah menemukan barang yang cocok dengan deskripsi Anda: Dompet Hitam di area Kampus</p>
+                        <span class="notification-time">2 menit yang lalu</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-read"><i class="fas fa-check"></i></button>
+                        <button class="delete"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Verifikasi Pengguna</h3>
+                        <p>Akun Anda telah berhasil diverifikasi. Sekarang Anda dapat menggunakan semua fitur.</p>
+                        <span class="notification-time">15 menit yang lalu</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="mark-read"><i class="fas fa-check"></i></button>
+                        <button class="delete"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <!-- Read Notifications -->
+                <div class="notification-item read">
+                    <div class="notification-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Pesan Baru</h3>
+                        <p>Anda menerima pesan baru dari penemu barang mengenai Laptop yang hilang</p>
+                        <span class="notification-time">1 jam yang lalu</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="delete"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="notification-item read">
+                    <div class="notification-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h3>Status Update</h3>
+                        <p>Laporan barang hilang Anda telah diverifikasi dan dipublikasikan</p>
+                        <span class="notification-time">1 hari yang lalu</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="delete"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-settings">
+                <button class="settings-btn">
+                    <i class="fas fa-cog"></i> Pengaturan Notifikasi
+                </button>
+                <button class="clear-all-btn">
+                    <i class="fas fa-trash-alt"></i> Hapus Semua
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

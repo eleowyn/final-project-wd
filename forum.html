@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found - Forum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('images/backgroundimage.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #1e293b;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .header {
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            color: #1e293b;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .forum-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .create-post {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .create-post textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            resize: vertical;
+            min-height: 100px;
+            font-size: 1rem;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .post-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .post-btn.primary {
+            background-color: #1e40af;
+            color: white;
+        }
+
+        .post-btn.primary:hover {
+            background-color: #1e3a8a;
+        }
+
+        .post-btn.secondary {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .post {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #1e40af;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .post-info {
+            flex: 1;
+        }
+
+        .post-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .post-time {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .post-content {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .forum-container {
+                padding: 1rem;
+            }
+
+            .post-btn {
+                width: 100%;
+            }
+
+            .post-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>UNKLAB Lost & Found</h1>
+    </header>
+
+    <div class="forum-container">
+        <div class="create-post">
+            <textarea id="postContent" placeholder="Start a discussion..."></textarea>
+            <div class="post-actions">
+                <button class="post-btn secondary" onclick="clearPost()">Cancel</button>
+                <button class="post-btn primary" onclick="addPost()">Post</button>
+            </div>
+        </div>
+
+        <div id="postsList" class="posts-list">
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar">JD</div>
+                    <div class="post-info">
+                        <div class="post-author">John Doe</div>
+                        <div class="post-time">2 hours ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Has anyone seen a blue backpack near the cafeteria? I left it there during lunch.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function clearPost() {
+            document.getElementById("postContent").value = "";
+        }
+
+        function addPost() {
+            const postContent = document.getElementById("postContent").value.trim();
+            if (postContent === "") {
+                alert("Please write something before posting.");
+                return;
+            }
+
+            const postsList = document.getElementById("postsList");
+
+            // Create new post element
+            const newPost = document.createElement("div");
+            newPost.classList.add("post");
+
+            newPost.innerHTML = `
+                <div class="post-header">
+                    <div class="post-avatar">AA</div>
+                    <div class="post-info">
+                        <div class="post-author">Anonymous</div>
+                        <div class="post-time">Just now</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    ${postContent}
+                </div>
+            `;
+
+            // Add new post to the top of the list
+            postsList.prepend(newPost);
+
+            // Clear the textarea
+            clearPost();
+        }
+    </script>
+</body>
+</html>

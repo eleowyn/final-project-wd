@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found - Chat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <aside class="chat-sidebar">
+            <header class="sidebar-header">
+                <button class="back-btn" onclick="window.location.href='dashboard.html'">&larr;</button>
+                <h2>Messages</h2>
+            </header>
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <div class="chat-avatar">JD</div>
+                    <div class="chat-info">
+                        <div class="chat-name">John Doe</div>
+                        <div class="chat-preview">About: MacBook Pro</div>
+                    </div>
+                </div>
+                <div class="chat-item">
+                    <div class="chat-avatar">AS</div>
+                    <div class="chat-info">
+                        <div class="chat-name">Alice Smith</div>
+                        <div class="chat-preview">About: iPhone 13</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="chat-avatar">JD</div>
+                <div class="chat-info">
+                    <div class="chat-name">John Doe</div>
+                    <div class="chat-status">Online</div>
+                </div>
+            </header>
+
+            <div class="chat-messages">
+                <div class="message received">Hi, I found your MacBook Pro at GK2-108.</div>
+                <div class="message sent">Oh thank you! Can we meet to get it back?</div>
+                <div class="message received">Sure! I'm available until 4 PM.</div>
+            </div>
+
+            <footer class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        const input = document.querySelector('.chat-input input');
+        const messages = document.querySelector('.chat-messages');
+
+        function sendMessage() {
+            const message = input.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message sent';
+                messageElement.textContent = message;
+                messages.appendChild(messageElement);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

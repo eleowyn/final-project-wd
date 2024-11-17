@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form - UNKLAB Lost & Found</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Login to UNKLAB Lost & Found</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            required
+                        >
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+           
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                            required
+                        >
+                        <i class="fa fa-eye-slash toggle-password"></i>
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+           
+                <button type="button" class="login-btn" onclick="goDashboard()">
+                    <span>Login</span>
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </form>
+            <div class="form-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            <div class="separator">
+                <span>or continue with</span>
+            </div>
+            <div class="social-login">
+                <button class="social-btn google">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="social-btn microsoft">
+                    <i class="fab fa-microsoft"></i>
+                    Microsoft
+                </button>
+            </div>
+            <p class="signup-link">
+                Don't have an account? <a href="#" id="showSignup">Sign up</a>
+            </p>
+        </div>
+
+        <div class="signup-box" style="display: none;">
+            <div class="login-header">
+                <img src="/api/placeholder/80/80" alt="Logo" class="logo">
+                <h2>Create an Account</h2>
+                <p>Sign up for UNKLAB Lost & Found</p>
+            </div>
+            <form id="signupForm" class="login-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input
+                            type="text"
+                            name="fullName"
+                            id="fullName"
+                            placeholder="Full Name"
+                            required
+                        >
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            required
+                        >
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                            required
+                        >
+                        <i class="fa fa-eye-slash toggle-password"></i>
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+
+                <button type="button" class="login-btn" onclick="goDashboard()">
+                    <span>Sign Up</span>
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </form>
+            <div class="separator">
+                <span>or continue with</span>
+            </div>
+            <div class="social-login">
+                <button class="social-btn google">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="social-btn microsoft">
+                    <i class="fab fa-microsoft"></i>
+                    Microsoft
+                </button>
+            </div>
+            <p class="signup-link">
+                Already have an account? <a href="#" id="showLogin">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function goDashboard() {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

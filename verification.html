@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found - Verification System</title>
+    <link rel="stylesheet" href="verification.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/api/placeholder/40/40" alt="UNKLAB Logo">
+                <span>Verification Center</span>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Welcome, User</span>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Identity Verification Section -->
+        <section class="verification-section" id="identityVerification">
+            <h2><i class="fas fa-user-shield"></i> Identity Verification</h2>
+            <div class="verification-status pending">
+                <span class="status-badge">Status: Pending Verification</span>
+            </div>
+            
+            <form class="verification-form" id="identityForm">
+                <div class="form-group">
+                    <label for="studentId">Student ID Number</label>
+                    <input type="text" id="studentId" required placeholder="Enter your student ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="idCard">Student ID Card</label>
+                    <div class="file-upload">
+                        <input type="file" id="idCard" accept="image/*" required>
+                        <label for="idCard" class="file-label">
+                            <i class="fas fa-upload"></i> Upload ID Card
+                        </label>
+                    </div>
+                    <div class="upload-preview" id="idPreview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="selfie">Selfie with ID Card</label>
+                    <div class="file-upload">
+                        <input type="file" id="selfie" accept="image/*" required>
+                        <label for="selfie" class="file-label">
+                            <i class="fas fa-upload"></i> Upload Selfie
+                        </label>
+                    </div>
+                    <div class="upload-preview" id="selfiePreview"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit for Verification</button>
+            </form>
+        </section>
+
+        <!-- Ownership Claim Verification Section -->
+        <section class="verification-section" id="ownershipVerification">
+            <h2><i class="fas fa-clipboard-check"></i> Ownership Claim Verification</h2>
+            
+            <div class="claim-list">
+                <h3>Active Claims</h3>
+                <div class="claim-card">
+                    <div class="claim-header">
+                        <span class="claim-id">#CLM001</span>
+                        <span class="claim-status pending">Pending Review</span>
+                    </div>
+                    <div class="claim-details">
+                        <div class="item-info">
+                            <img src="/api/placeholder/100/100" alt="Item Image" class="item-image">
+                            <div class="item-description">
+                                <h4>Lost Item: Blue Laptop Bag</h4>
+                                <p>Found at: Library, 2nd Floor</p>
+                                <p>Date: 2024-03-15</p>
+                            </div>
+                        </div>
+                        <div class="proof-section">
+                            <h4>Proof of Ownership</h4>
+                            <form class="proof-form">
+                                <div class="form-group">
+                                    <label for="itemDescription">Detailed Description</label>
+                                    <textarea id="itemDescription" placeholder="Provide specific details about the item..." required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="proofImage">Upload Proof (receipts, photos)</label>
+                                    <div class="file-upload">
+                                        <input type="file" id="proofImage" accept="image/*" multiple>
+                                        <label for="proofImage" class="file-label">
+                                            <i class="fas fa-upload"></i> Upload Images
+                                        </label>
+                                    </div>
+                                    <div class="upload-preview" id="proofPreview"></div>
+                                </div>
+                                <button type="submit" class="submit-btn">Submit Claim</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification History -->
+        <section class="verification-section" id="verificationHistory">
+            <h2><i class="fas fa-history"></i> Verification History</h2>
+            <div class="history-list">
+                <div class="history-item approved">
+                    <span class="history-date">2024-03-10</span>
+                    <span class="history-type">Identity Verification</span>
+                    <span class="history-status">Approved</span>
+                    <button class="view-details-btn">View Details</button>
+                </div>
+                <div class="history-item rejected">
+                    <span class="history-date">2024-03-08</span>
+                    <span class="history-type">Ownership Claim</span>
+                    <span class="history-status">Rejected</span>
+                    <button class="view-details-btn">View Details</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <div class="modal" id="verificationModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Verification Details</h2>
+            <div class="verification-details">
+            </div>
+        </div>
+    </div>
+
+    <script src="verification.js"></script>
+</body>
+</html>
